@@ -60,7 +60,9 @@ public class Utilities {
     public static void playWav(File file) {
         // play wav sound
         try {
-            Applet.newAudioClip(file.toURL()).play();
+            System.out.println(file);
+            URL url = new URL(file.getAbsolutePath());
+            Applet.newAudioClip(url).play();
         } catch (Exception exception) {
             // for programmer's use only
             System.out.println(exception.getMessage());
